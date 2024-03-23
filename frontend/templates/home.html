@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="main">
+    <img src="{{ url_for('static', filename='images/vfrbg.jpg') }}" alt="">
+    <h1>Virtual Fitting Room</h1>
+</div>
+
+<div class="usersection">
+
+    <form class="userdetails" action="{{ url_for('predict') }}" method="POST">
+        <label for="">
+            Bust(cm)
+        </label>
+        <input name="bust" type="number">
+        <label for="">
+            Waist(cm)
+        </label>
+        <input name="waist" type="number">
+        <label for="">
+            High Hips(cm) 
+        </label>
+        <input name="highhips" type="number">
+        <label for="">
+            Hips(cm)
+        </label>
+        <input name="hips" type="number">
+        <h2>Your Body type is</h2>
+        <span>{{ btype }}</span>
+        <input type="submit" value="Predict">
+    </form>
+
+    <div class="results">
+        <h2>Your Body type is</h2>
+        <span>{{ btype }}</span>
+    </div>
+</div>
+{% endblock %}

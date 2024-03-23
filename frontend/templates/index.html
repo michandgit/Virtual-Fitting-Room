@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Fitting Room</title>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo"></div>
+            <ul >
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+        </nav>
+
+        {% block content %}
+        {% endblock %}
+
+        <div class="footer">
+            <div class="detail1">
+                <p>Customer - Care : 000-111-222</p>
+                <p>virtualfittingroom.com </p>
+            </div>
+            <div class="detail2">
+                <p>Accessories</p>
+                <p>Clothes</p>
+                <p>Fabrics</p>
+                <p>Styles</p>
+                <p>Dressing</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
